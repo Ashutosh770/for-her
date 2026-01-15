@@ -1,0 +1,314 @@
+/* Special Dates & Countdown Styles */
+.dates-container {
+    min-height: 100vh;
+    padding: 80px 20px 40px;
+    overflow-y: auto;
+}
+
+.dates-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.dates-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+    text-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+    animation: fadeInDown 1s ease;
+}
+
+.dates-subtitle {
+    font-size: 1.1em;
+    opacity: 0.8;
+    margin-top: 10px;
+}
+
+/* Main Counter */
+.main-counter {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    padding: 50px 40px;
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.2), rgba(255, 105, 180, 0.05));
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    border: 2px solid rgba(255, 105, 180, 0.3);
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(255, 105, 180, 0.2);
+    animation: fadeInUp 0.8s ease;
+}
+
+.counter-label {
+    font-size: 1.3em;
+    color: #ffc0cb;
+    margin-bottom: 20px;
+}
+
+.counter-value {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.counter-unit {
+    text-align: center;
+}
+
+.counter-number {
+    font-size: 4em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff69b4, #ff8da1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    text-shadow: 0 0 40px rgba(255, 105, 180, 0.5);
+}
+
+.counter-text {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 8px;
+}
+
+.counter-heart {
+    font-size: 3em;
+    animation: heartbeat 1.5s infinite;
+    margin-top: 20px;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    75% {
+        transform: scale(1.1);
+    }
+}
+
+/* Countdown Section */
+.countdown-section {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.countdown-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: #ff69b4;
+}
+
+.countdown-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.countdown-box {
+    padding: 25px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 100px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.countdown-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 105, 180, 0.3);
+}
+
+.countdown-num {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #ff69b4;
+}
+
+.countdown-label {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 5px;
+}
+
+/* Milestones */
+.milestones-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.milestones-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ff69b4;
+}
+
+.milestones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.milestone-card {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.milestone-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 105, 180, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.milestone-card:hover::before {
+    left: 100%;
+}
+
+.milestone-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(255, 105, 180, 0.2);
+    border-color: rgba(255, 105, 180, 0.4);
+}
+
+.milestone-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.milestone-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4em;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.milestone-date {
+    font-size: 0.9em;
+    color: #ff69b4;
+    margin-bottom: 10px;
+}
+
+.milestone-desc {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+}
+
+/* Ring Progress */
+.progress-ring {
+    margin: 20px auto;
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.progress-ring-circle {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 8;
+}
+
+.progress-ring-progress {
+    fill: none;
+    stroke: url(#gradient);
+    stroke-width: 8;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    transition: stroke-dashoffset 1s ease;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.progress-value {
+    font-size: 2em;
+    font-weight: 700;
+    color: #ff69b4;
+}
+
+.progress-label {
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dates-title {
+        font-size: 2.5em;
+    }
+
+    .counter-number {
+        font-size: 3em;
+    }
+
+    .counter-value {
+        gap: 15px;
+    }
+
+    .main-counter {
+        padding: 35px 25px;
+    }
+
+    .milestones-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -250,7 +250,7 @@ const Home = () => {
 
             <div id="wrap">
                 <div id="text">
-                    <div id="code" className="glass">
+                    <div id="code" className="glass" style={{ animation: 'pulse 15s infinite' }}>
                         <span className="say">Hey my love 💞</span><br />
                         <span className="say">I just wanted to say...</span><br />
                         <span className="say">You mean the world to me 🌎</span><br />
@@ -263,19 +263,54 @@ const Home = () => {
 
                 <div id="surprise-trigger" onClick={handleSurprise}
                     style={{
-                        display: 'none', position: 'absolute', bottom: '100px', left: '50%', transform: 'translateX(-50%)', zIndex: 20, cursor: 'pointer',
+                        display: 'none', position: 'absolute', bottom: '50px', left: '40%', transform: 'translateX(-30%)', zIndex: 20, cursor: 'pointer',
                         background: 'linear-gradient(45deg, #ff69b4, #ff8da1)', padding: '15px 30px', borderRadius: '50px', color: 'white', fontFamily: 'Montserrat', fontWeight: 'bold', boxShadow: '0 5px 15px rgba(255,105,180,0.4)', animation: 'pulse 2s infinite'
                     }}>
                     🎁 Tap for a Surprise
                 </div>
 
-                {/* Navigation Links */}
-                <div id="nav-links" style={{ position: 'absolute', bottom: '30px', left: '50%', transform: 'translateX(-50%)', zIndex: 100, display: 'flex', gap: '20px' }}>
-                    <Link to="/memory" className="nav-btn glass">Our Memories 🕰️</Link>
-                    <Link to="/reasons" className="nav-btn glass">Why I Love You 💖</Link>
-                </div>
-
                 <canvas id="canvas" ref={canvasRef} width="1100" height="680"></canvas>
+            </div>
+
+            {/* Navigation Hub - Outside wrap div */}
+            <div id="nav-links" style={{
+                position: 'fixed',
+                bottom: '20px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                zIndex: 100,
+                display: 'flex',
+                gap: '10px',
+                flexWrap: 'wrap',
+                justifyContent: 'center',
+                maxWidth: '800px',
+                padding: '15px 20px',
+                background: 'rgba(26, 11, 46, 0.85)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+            }}>
+                <Link to="/letter" className="nav-btn glass" style={{ fontSize: '0.85em', padding: '8px 15px' }}>
+                    💌 Love Letter
+                </Link>
+                <Link to="/messages" className="nav-btn glass" style={{ fontSize: '0.85em', padding: '8px 15px' }}>
+                    💬 Messages
+                </Link>
+                <Link to="/memory" className="nav-btn glass" style={{ fontSize: '0.85em', padding: '8px 15px' }}>
+                    🕰️ Memories
+                </Link>
+                <Link to="/gallery" className="nav-btn glass" style={{ fontSize: '0.85em', padding: '8px 15px' }}>
+                    📸 Gallery
+                </Link>
+                <Link to="/dates" className="nav-btn glass" style={{ fontSize: '0.85em', padding: '8px 15px' }}>
+                    ⏰ Dates
+                </Link>
+                <Link to="/reasons" className="nav-btn glass" style={{ fontSize: '0.85em', padding: '8px 15px' }}>
+                    💖 Why I Love You
+                </Link>
+                <Link to="/quiz" className="nav-btn glass" style={{ fontSize: '0.85em', padding: '8px 15px' }}>
+                    💕 Quiz
+                </Link>
             </div>
 
             {/* Gallery Overlay */}

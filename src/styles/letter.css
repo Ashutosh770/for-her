@@ -1,0 +1,259 @@
+/* Love Letter Styles */
+.letter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 80px 20px 60px;
+    overflow-y: auto;
+    padding-bottom: 100px;
+}
+
+.letter-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+    text-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+    margin-bottom: 10px;
+    animation: fadeInDown 1s ease;
+}
+
+.letter-subtitle {
+    font-size: 1.1em;
+    opacity: 0.8;
+    margin-bottom: 40px;
+    animation: fadeInDown 1s ease 0.3s both;
+}
+
+/* Envelope */
+.envelope-wrapper {
+    perspective: 1000px;
+    cursor: pointer;
+    animation: float 3s ease-in-out infinite;
+}
+
+.envelope {
+    position: relative;
+    width: 320px;
+    height: 220px;
+    background: linear-gradient(135deg, #ff69b4, #ff8da1);
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(255, 105, 180, 0.4);
+    transition: transform 0.6s ease;
+}
+
+.envelope::before {
+    content: '💌';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    opacity: 0.9;
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+    border-top: 110px solid #ff4081;
+    transform-origin: top;
+    transition: transform 0.8s ease;
+    z-index: 2;
+}
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+.envelope-hint {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9em;
+    opacity: 0.7;
+    animation: pulse 2s infinite;
+}
+
+/* Letter Content */
+.letter-content {
+    display: none;
+    max-width: 600px;
+    padding: 40px;
+    margin-top: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: unfold 1s ease forwards;
+}
+
+.letter-content.visible {
+    display: block;
+}
+
+.letter-paper {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(255, 240, 245, 0.95));
+    color: #333;
+    padding: 40px;
+    border-radius: 10px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4em;
+    line-height: 2;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.letter-paper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 40px;
+    right: 40px;
+    height: 100%;
+    background: repeating-linear-gradient(transparent,
+            transparent 31px,
+            rgba(200, 200, 200, 0.3) 31px,
+            rgba(200, 200, 200, 0.3) 32px);
+    pointer-events: none;
+}
+
+.letter-greeting {
+    font-size: 1.6em;
+    color: #ff4081;
+    margin-bottom: 20px;
+}
+
+.letter-body p {
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.letter-signature {
+    text-align: right;
+    font-size: 1.4em;
+    color: #ff4081;
+    margin-top: 30px;
+}
+
+/* Rose Petals */
+.petal {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(ellipse at center, #ff6b9d, #ff4081);
+    border-radius: 50% 0 50% 50%;
+    opacity: 0;
+    pointer-events: none;
+    animation: fall 6s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes unfold {
+    0% {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.typing-text {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typewriter 3s steps(40) 1s both;
+    border-right: 2px solid #ff4081;
+}
+
+/* Back Button Override */
+.letter-container .back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .envelope {
+        width: 260px;
+        height: 180px;
+    }
+
+    .envelope-flap {
+        border-left: 130px solid transparent;
+        border-right: 130px solid transparent;
+        border-top: 90px solid #ff4081;
+    }
+
+    .letter-paper {
+        padding: 25px;
+        font-size: 1.2em;
+    }
+
+    .letter-title {
+        font-size: 2.5em;
+    }
+}
