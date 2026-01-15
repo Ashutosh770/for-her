@@ -237,23 +237,90 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-    .envelope {
-        width: 260px;
-        height: 180px;
-    }
-
-    .envelope-flap {
-        border-left: 130px solid transparent;
-        border-right: 130px solid transparent;
-        border-top: 90px solid #ff4081;
-    }
-
-    .letter-paper {
-        padding: 25px;
-        font-size: 1.2em;
+    .letter-container {
+        padding: 70px 15px 40px;
     }
 
     .letter-title {
-        font-size: 2.5em;
+        font-size: 2.2em;
+    }
+
+    .letter-subtitle {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+
+    .envelope {
+        width: 280px;
+        height: 190px;
+    }
+
+    .envelope-flap {
+        border-left: 140px solid transparent;
+        border-right: 140px solid transparent;
+        border-top: 95px solid #ff4081;
+    }
+
+    .envelope::before {
+        font-size: 50px;
+    }
+
+    .letter-content {
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .letter-paper {
+        padding: 25px 20px;
+        font-size: 1.1em;
+        line-height: 1.8;
+    }
+
+    .letter-greeting {
+        font-size: 1.3em;
+    }
+
+    .letter-signature {
+        font-size: 1.2em;
+    }
+
+    .petal {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .letter-container {
+        padding: 60px 10px 30px;
+    }
+
+    .letter-title {
+        font-size: 1.8em;
+    }
+
+    .envelope {
+        width: 240px;
+        height: 160px;
+    }
+
+    .envelope-flap {
+        border-left: 120px solid transparent;
+        border-right: 120px solid transparent;
+        border-top: 80px solid #ff4081;
+    }
+
+    .envelope::before {
+        font-size: 40px;
+    }
+
+    .letter-paper {
+        padding: 20px 15px;
+        font-size: 1em;
+        line-height: 1.7;
+    }
+
+    .letter-greeting {
+        font-size: 1.2em;
     }
 }

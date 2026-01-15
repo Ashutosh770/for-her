@@ -292,23 +292,124 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .dates-container {
+        padding: 70px 15px 40px;
+    }
+
     .dates-title {
-        font-size: 2.5em;
+        font-size: 2.2em;
     }
 
-    .counter-number {
-        font-size: 3em;
-    }
-
-    .counter-value {
-        gap: 15px;
+    .dates-subtitle {
+        font-size: 0.95em;
     }
 
     .main-counter {
-        padding: 35px 25px;
+        padding: 30px 20px;
+        margin-bottom: 30px;
+    }
+
+    .counter-label {
+        font-size: 1.3em;
+    }
+
+    .counter-value {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .counter-box {
+        min-width: 60px;
+        padding: 12px 8px;
+    }
+
+    .counter-number {
+        font-size: 2em;
+    }
+
+    .counter-unit {
+        font-size: 0.65em;
+    }
+
+    .countdown-section {
+        margin-bottom: 30px;
+    }
+
+    .countdown-title {
+        font-size: 1.5em;
+    }
+
+    .countdown-boxes {
+        gap: 8px;
+    }
+
+    .countdown-box {
+        padding: 12px 10px;
+        min-width: 50px;
+    }
+
+    .countdown-number {
+        font-size: 1.6em;
+    }
+
+    .countdown-unit {
+        font-size: 0.65em;
+    }
+
+    .milestones-title {
+        font-size: 1.5em;
     }
 
     .milestones-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .milestone-card {
+        padding: 20px;
+    }
+
+    .milestone-icon {
+        font-size: 2.5em;
+    }
+
+    .milestone-name {
+        font-size: 1.2em;
+    }
+
+    .milestone-date {
+        font-size: 0.85em;
+    }
+
+    .milestone-desc {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .dates-title {
+        font-size: 1.8em;
+    }
+
+    .counter-value {
+        gap: 8px;
+    }
+
+    .counter-box {
+        min-width: 50px;
+        padding: 10px 6px;
+    }
+
+    .counter-number {
+        font-size: 1.6em;
+    }
+
+    .countdown-box {
+        padding: 10px 8px;
+        min-width: 45px;
+    }
+
+    .countdown-number {
+        font-size: 1.4em;
     }
 }
