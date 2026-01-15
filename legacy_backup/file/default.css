@@ -1,0 +1,190 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1a0b2e 0%, #4a1c40 100%);
+    /* Deep romantic gradient */
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    /* Modern sans-serif */
+    overflow: hidden;
+    /* Hide scrollbars for the main view */
+    height: 100vh;
+}
+
+/* Glassmorphism utility */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    color: #ffc0cb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff69b4;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#wrap {
+    position: relative;
+    margin: 0 auto;
+    width: 1100px;
+    /* Kept wide for the canvas tree */
+    height: 680px;
+    margin-top: 20px;
+}
+
+#text {
+    width: 350px;
+    height: 560px;
+    left: 40px;
+    /* Moved further left to avoid tree overlap */
+    top: 80px;
+    position: absolute;
+    padding: 20px;
+    z-index: 10;
+}
+
+#code {
+    display: none;
+    color: #ffe6f2;
+    font-family: 'Dancing Script', cursive;
+    font-size: 26px;
+    /* Slightly larger for readability */
+    line-height: 1.8;
+    font-weight: bold;
+}
+
+.say {
+    display: block;
+    margin-bottom: 12px;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+/* Removed clock styles */
+
+#canvas {
+    margin: 0 auto;
+    width: 1100px;
+    height: 680px;
+    display: block;
+    z-index: 5;
+}
+
+#error {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 60px;
+    display: none;
+}
+
+.hand {
+    cursor: pointer;
+}
+
+/* Floating Hearts Animation */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.heart-float {
+    position: absolute;
+    bottom: -100px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 192, 203, 0.5);
+    transform: rotate(45deg);
+    animation: floatUp 15s linear infinite;
+}
+
+.heart-float::before,
+.heart-float::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 192, 203, 0.5);
+    border-radius: 50%;
+}
+
+.heart-float::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart-float::after {
+    top: 0;
+    left: -10px;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(45deg) scale(0.5);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-120vh) rotate(45deg) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Music Control hint */
+#music-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    cursor: pointer;
+    font-size: 24px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+#music-control:hover {
+    opacity: 1;
+}
+
+/* Page Navigation Buttons */
+.nav-btn {
+    padding: 12px 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.nav-btn:hover {
+    background: rgba(255, 105, 180, 0.6);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+    color: #fff;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reasons I Love You</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="file/default.css">
+    <style>
+        body {
+            overflow-y: auto;
+            perspective: 1000px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            padding: 30px;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.4s ease;
+            cursor: default;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 105, 180, 0.4);
+        }
+
+        .number {
+            font-size: 3em;
+            font-family: 'Dancing Script', cursive;
+            color: rgba(255, 105, 180, 0.2);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            transition: 0.3s;
+        }
+
+        .card:hover .number {
+            color: rgba(255, 105, 180, 0.8);
+            transform: scale(1.2);
+        }
+
+        .reason-text {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-top: 20px;
+            z-index: 2;
+        }
+
+        .icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 30px;
+            color: white;
+            font-family: 'Montserrat';
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 105, 180, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hearts-container">
+        <div class="heart-float" style="left: 15%; animation-delay: 1s;"></div>
+        <div class="heart-float" style="left: 35%; animation-delay: 4s;"></div>
+        <div class="heart-float" style="left: 55%; animation-delay: 7s;"></div>
+        <div class="heart-float" style="left: 85%; animation-delay: 2s;"></div>
+    </div>
+
+    <a href="index.html" class="back-btn">← Home</a>
+
+    <div class="container">
+        <h1 style="font-family: 'Dancing Script', cursive; font-size: 3.5em; text-shadow: 0 0 10px #ff69b4;">Reasons I
+            Love You</h1>
+        <p style="font-size: 1.2em; opacity: 0.8; margin-bottom: 20px;">Just a few of the million reasons why...</p>
+
+        <div class="grid">
+            <div class="card glass">
+                <span class="number">01</span>
+                <div class="icon">😊</div>
+                <div class="reason-text">Because your smile is the most beautiful thing I've ever seen. It brightens up
+                    my darkest days.</div>
+            </div>
+
+            <div class="card glass">
+                <span class="number">02</span>
+                <div class="icon">🧠</div>
+                <div class="reason-text">Because you challenge me to be a better person. You inspire me every single
+                    day.</div>
+            </div>
+
+            <div class="card glass">
+                <span class="number">03</span>
+                <div class="icon">🤗</div>
+                <div class="reason-text">Because of how safe I feel in your arms. You are my home, my comfort, my peace.
+                </div>
+            </div>
+
+            <div class="card glass">
+                <span class="number">04</span>
+                <div class="icon">😂</div>
+                <div class="reason-text">Because you have the weirdest, cutest laugh that I absolutely adore.</div>
+            </div>
+
+            <div class="card glass">
+                <span class="number">05</span>
+                <div class="icon">🙏</div>
+                <div class="reason-text">Because you support my dreams, no matter how crazy they sound.</div>
+            </div>
+
+            <div class="card glass">
+                <span class="number">06</span>
+                <div class="icon">💖</div>
+                <div class="reason-text">Because you love me for who I am, flaws and all.</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
